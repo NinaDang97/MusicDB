@@ -2,6 +2,7 @@ import java.util.*;
 
 import model.Artist;
 import model.DataSource;
+import model.SongArtist;
 
 public class Main {
 
@@ -25,11 +26,25 @@ public class Main {
 //			System.out.println("ID = " + artist.getId() + ", Name = " + artist.getName());
 //		}
 		
-		List<String> albums = dataSource.queryAlbumsForArtist("Man", 2);
+		List<String> albums = dataSource.queryAlbumsForArtist("Pink Floyd", 2);
 		
 		//Print all albums for selected artist
-		for(String album : albums){
-			System.out.println("Album name: " + album);
+//		for(String album : albums){
+//			System.out.println("Album name: " + album);
+//		}
+		
+		List<SongArtist> songArtists = dataSource.queryArtistsForSong("Go Your Own Way", 3);
+		
+		if(songArtists == null){
+			System.out.println("Couln't find the artist for the song");
+			return;
+		}
+		//Print all songs for selected artist
+		System.out.println("Artist Name | Album Name | Track");
+		for(SongArtist songArtist : songArtists){
+			System.out.println(songArtist.getArtistName()
+							+ " | " + songArtist.getAlbumName()
+							+ " | " + songArtist.getTrack());
 		}
 		
 		dataSource.close();
