@@ -40,12 +40,15 @@ public class Main {
 			return;
 		}
 		//Print all songs for selected artist
-		System.out.println("Artist Name | Album Name | Track");
-		for(SongArtist songArtist : songArtists){
-			System.out.println(songArtist.getArtistName()
-							+ " | " + songArtist.getAlbumName()
-							+ " | " + songArtist.getTrack());
-		}
+//		System.out.println("Artist Name | Album Name | Track");
+//		for(SongArtist songArtist : songArtists){
+//			System.out.println(songArtist.getArtistName()
+//							+ " | " + songArtist.getAlbumName()
+//							+ " | " + songArtist.getTrack());
+//		}
+		
+		//Print metadata - get column name from table songs
+		dataSource.querySongsMetadata();
 		
 		dataSource.close();
 		
