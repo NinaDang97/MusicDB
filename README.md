@@ -1,6 +1,6 @@
 # MusicDB
 ### Overview
-- Program runs on executing RDBMS SQLite queries, getting values from tables and assigned into a corresponding DAO interface to print out on console window.
+- Program runs on executing RDBMS SQLite queries, getting values from tables and assigned into a corresponding object to print out on console window in ArrayList data type.
 
 ### Install and running app
 - Build path with external library: sqlite-jdbc jar 
@@ -8,7 +8,8 @@
 
 ### Folder structure 
 - Database file is in src/music.db, composed of 3 tables: songs, albums, artists
-- Currently, DAO interfaces: Song, Album, Artist and SongArtist
+- Currently, DAO interface: DataSource.java
+- Object constructors: Album.java, Artist.java, Song.java, SongArtist.java
 
 ```
 MusicDB/
